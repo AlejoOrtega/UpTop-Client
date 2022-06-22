@@ -21,17 +21,17 @@ const LandingBody = () => {
             <h1>Our Private Investment Solutions</h1>
             <div className='landing-information'>
                 <div>
-                    <img src={stats} alt='stats-image'/>
+                    <img src={stats} alt='stats'/>
                     <h3>Wealth management</h3>
                     <p>CIPHER INVESTMENTS has a robust suite of tools designed to grow and manage wealth. We feature both traditional and digital solutions.</p>
                 </div>
                 <div>
-                    <img src={classGroup} alt='group-image'/>
+                    <img src={classGroup} alt='group'/>
                     <h3>Network Planning</h3>
                     <p>Our experienced team helps plan for each investment carefully and with ease. We create strategies that keep up with our company's financial needs and goals.</p>
                 </div>
                 <div>
-                    <img src={deskGroup} alt='desk-image'/>
+                    <img src={deskGroup} alt='desk'/>
                     <h3>Community Educators</h3>
                     <p>One of our main goals is to educate, train and equip our society with the right guidance to act on an opportunity when it presents itself.</p>
                 </div>
