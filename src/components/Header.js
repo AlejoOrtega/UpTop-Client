@@ -4,7 +4,7 @@ import SignIn from './SignIn';
 import logoBlack from '../resources/images/logo-black.png'
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { signup, login } from './utils/fetchs';
+import { signup, login, logout } from './utils/fetchs';
 
 import { useDispatch } from 'react-redux';
 import { saveUser, logOut } from './utils/stores/user';
@@ -62,6 +62,7 @@ const Header = () => {
     }
 
     const onLogOut = () => {
+        logout()
         dispatch(logOut())
     }
 
@@ -71,7 +72,7 @@ const Header = () => {
                 <div style={{display: 'flex'}}>
                     <Button variant="contained" onClick={()=>navigate('/plans')}>Plans</Button>
                     <Button variant="contained" onClick={()=>navigate('/my-courses')}>My courses</Button>
-                    <h1>{currentUser}</h1>
+                    <h1 onClick={()=>navigate('/profile')}>{currentUser}</h1>
                     <Button variant="contained" onClick={onLogOut}>Log Out</Button>
                 </div>
             )

@@ -5,6 +5,7 @@ import LandingBody from './components/LandingBody'
 import ContactUs from './components/ContactUs';
 import Plan from './pages/Plan';
 import MyCourse from './pages/MyCourse';
+import Profile from './pages/Profile';
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -20,7 +21,6 @@ function App() {
 
     const checkCookies = async()=> {
       let response = await autoLogin()
-      console.log(response)
       if(response.hasOwnProperty('username')){
         dispatch(saveUser(response.username))
       }
@@ -36,6 +36,7 @@ function App() {
           <Route path='contact-us' element={<ContactUs/>}/>
           <Route path='plans' element={<Plan/>}/>
           <Route path='my-courses' element={<MyCourse/>}/>
+          <Route path='profile' element={<Profile/>}/>
         </Route>
       </Routes>
     </div>

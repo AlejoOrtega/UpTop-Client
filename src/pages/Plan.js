@@ -1,12 +1,13 @@
 import React from 'react';
 import uptop from '../resources/images/uptop.png'
 import { useSelector } from 'react-redux';
+import { joinPlan } from '../components/utils/fetchs';
 
 const Plan = () => {
     const currentUser = useSelector(state => state.user.value)
 
-    const onJoinPlan = () => {
-
+    const onJoinPlan = (typeOfPlan) => {
+        joinPlan(typeOfPlan)
     }
     return ( 
         <>
@@ -23,7 +24,7 @@ const Plan = () => {
                     <li>Live News and Report Access</li>
                     <li>Trading Gains Page</li>
                  </ul>
-                 { currentUser? <button onClick={() =>onJoinPlan(currentUser, 'Free')}>Join Today!</button> : <h3>Login to join</h3> }
+                 { currentUser? <button onClick={() =>onJoinPlan('Free')}>Join Today!</button> : <h3>Login to join</h3> }
                 </div>
 
                 <div>
@@ -41,7 +42,7 @@ const Plan = () => {
                     <li>Monthly Giveaways</li>
                     <li>Access to Local Community Events hosted by UP TOP TRADING COMMUNITY</li>
                  </ul>
-                 {currentUser? <button onClick={()=> onJoinPlan(currentUser, 'Premium')}>Join Today!</button> : <h3>Login to join</h3> }
+                 {currentUser? <button onClick={()=> onJoinPlan('Premium')}>Join Today!</button> : <h3>Login to join</h3> }
                 </div>
                 
                 <div>
